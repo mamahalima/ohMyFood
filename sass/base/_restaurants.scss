@@ -1,0 +1,342 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: Georgia, serif;
+  margin-top: 2rem;
+}
+
+.back-btn {
+  background-color: $white;
+  border: none;
+  transform: translate(1.5rem, -2rem);
+}
+
+.palate-img {
+  width: 100%;
+  margin-top: -1rem;
+}
+
+.palate-section {
+  background-color: $bg-color;
+  padding-top: 2rem;
+  position: relative;
+  top: -2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-bottom: -2rem;
+
+}
+
+.palate-title {
+  font-size: 2rem;
+  text-align: left;
+  text-indent: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+
+.heart-icon {
+  width: 20%;
+  float: right;
+  margin-top: -3rem;
+  margin-right: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.heart-icon:hover path {
+  fill: url(#gradient-icon);
+  stroke: none;
+}
+
+
+#heart-toggle-icon:checked+label .heart-icon path {
+  fill: url(#gradient-icon);
+  stroke: none;
+}
+
+
+#heart-toggle-icon:not(:checked)+label .heart-icon path {
+  fill: none;
+  stroke: currentColor;
+}
+
+
+.enter {
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+  margin-left: 1rem;
+  border-bottom: 0.3rem solid #99E2D0;
+  height: 1.5rem;
+  width: 11%;
+}
+
+
+.startermenu {
+  background-color: $white;
+  border-radius: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-inline:2.5rem;
+  position: relative;
+  max-width:100%;
+}
+
+.startermenu:hover {
+  background: linear-gradient(to right, white 85%, #99E2D0 15%);
+}
+
+
+.menu-item {
+  margin-top: 1.5rem;
+  font-family: Arial, sans-serif;
+  position: relative;
+  left:-2rem;
+  font-size: 20px;
+  padding-top: 1rem;
+  width:100%;
+  white-space: nowrap;
+}
+
+
+.accompaniment{
+  position: relative;
+  left:-2rem;
+  margin-top: -0.7rem;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  width:100%;
+  white-space: nowrap;
+  
+}
+
+.menu-item:hover,.accompaniment:hover{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.euro {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -1.3rem;
+  left:3.5rem;
+  font-size: 20px;
+  color: $black;
+  transition: left 0s;
+}
+
+.euro:hover {
+  left:-1rem;
+}
+
+
+.menu-toggle {
+  display:none;
+}
+
+
+
+.check-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  opacity:0;
+  transition: opacity 0.3s ease-in-out;
+  width: 25px;
+  height: 20px;
+}
+
+.startermenu:hover .check-icon {
+  opacity: 1;
+}
+
+.plat,
+.dessert-category {
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+  margin-left: 1rem;
+  border-bottom: 0.3rem solid #99E2D0;
+  height: 1.5rem;
+  width: 11%;
+  padding-top: 1.7rem;
+}
+
+
+.btnbtn {
+  margin-left: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.3rem;
+  border: none;
+  color: $color;
+  background: $bg-gradient;
+  border-radius: 2rem;
+  padding-inline: 3rem;
+  font-size: 20px;
+  box-shadow: $box-shadow;
+}
+.btnbtn:hover{
+  transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+  
+}
+
+
+
+@media (min-width: 768px) {
+  .palate-title {
+    font-size: 2rem;
+    text-align: left;
+    text-indent: 0.8rem;
+    padding-bottom: 1rem;
+
+  }
+
+  .heart-icon {
+    width: 5%;
+    float: right;
+    margin-top: -3rem;
+    margin-right: 1.5rem;
+
+  }
+
+  .enter,
+  .plat,
+  .dessert-category {
+    width: 6%;
+  }
+
+  .check-icon {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+  }
+
+  .startermenu:hover .check-icon {
+    opacity: 1;
+  }
+
+  .euro {
+    position: relative;
+    left:3rem;
+  }
+
+  .euro:hover {
+    left: -3rem;
+  }
+
+  .btnbtn {
+    margin-left: 17rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .palate-img {
+    width: 100%;
+    margin-top: -1.5rem;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .heart-icon {
+    width: 5%;
+    position: relative;
+    left: -20rem;
+  }
+
+  .palate-title {
+    font-size: 2rem;
+    text-align: center;
+    text-indent: 0.7rem;
+    padding-bottom: 1rem;
+
+  }
+
+  .palate-section {
+    position: relative;
+    top: -2rem;
+    margin-bottom: -2rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+  }
+
+
+  .startermenu:hover {
+    background: linear-gradient(to right, white 90%, #99E2D0 10%);
+
+  }
+
+  .check-icon {
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .euro {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -1.3rem;
+    left:3rem;
+    font-size: 20px;
+    color: $black;
+    transition: left 0.5s ease;
+  
+  }
+  
+  .euro:hover {
+    left: -2.5rem;
+  }
+  
+
+  .title-myfood {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+
+  }
+
+  .back-btn {
+    position: relative;
+    top: -1.5rem;
+  }
+
+  .enter,
+  .plat,
+  .dessert-category {
+    margin-left: 1.5rem;
+    width: 4%;
+
+  }
+
+
+  .btnbtn {
+    margin-left: 27rem;
+  }
+
+}
