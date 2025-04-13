@@ -4,23 +4,28 @@ body {
   padding: 0;
 }
 
-h1 {
-  width: 100%;
+
+
+.title-myfood {
   text-align: center;
-  margin: 0;
   font-family: Georgia, serif;
-  margin-top: 2rem;
+
 }
 
 .back-btn {
-  background-color: $white;
-  border: none;
-  transform: translate(1.5rem, -2rem);
+  transform: translate(1.5rem, -3rem);
 }
 
 .palate-img {
   width: 100%;
-  margin-top: -1rem;
+  margin-top: -2rem;
+}
+
+.palate-title {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  font-size: 2rem;
 }
 
 .palate-section {
@@ -34,20 +39,12 @@ h1 {
 
 }
 
-.palate-title {
-  font-size: 2rem;
-  text-align: left;
-  text-indent: 0.5rem;
-  padding-bottom: 1rem;
-}
-
 
 .heart-icon {
-  width: 20%;
   float: right;
-  margin-top: -3rem;
-  margin-right: 0.5rem;
-  transition: all 0.4s ease-in-out;
+  padding-right: 1.5rem;
+  margin-top:-3rem;
+ 
 }
 
 input[type="checkbox"] {
@@ -71,8 +68,7 @@ input[type="checkbox"] {
   stroke: currentColor;
 }
 
-
-.enter {
+.enter,.plat,.dessert-category{
   color: #000000;
   font-family: 'Arial', sans-serif;
   margin-left: 1rem;
@@ -81,122 +77,132 @@ input[type="checkbox"] {
   width: 11%;
 }
 
+.container-menu {
+  padding-left: 10px;
+  padding-right: 10px;
+  gap:1rem
+}
 
 .startermenu {
-  background-color: $white;
-  border-radius: 1.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-inline:2.5rem;
+  background-color: white;
+  height: 72px;
+  border-radius: 1rem;
   position: relative;
-  max-width:100%;
+  
 }
+
 
 .startermenu:hover {
   background: linear-gradient(to right, white 85%, #99E2D0 15%);
 }
 
-
-.menu-item {
-  margin-top: 1.5rem;
-  font-family: Arial, sans-serif;
-  position: relative;
-  left:-2rem;
+.name-plate {
+  font-family: 'roboto',sans-serif;
   font-size: 20px;
-  padding-top: 1rem;
-  width:100%;
-  white-space: nowrap;
-}
-
-
-.accompaniment{
-  position: relative;
-  left:-2rem;
-  margin-top: -0.7rem;
-  font-family: Arial, sans-serif;
-  color: #000000;
-  width:100%;
-  white-space: nowrap;
+  padding-top:0.5rem;
+  font-weight:550;
+  padding-left: 0.7rem;
   
 }
 
-.menu-item:hover,.accompaniment:hover{
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+.description-plate {
+  font-family:'roboto',sans-serif;
+  font-size:15px;
+  padding-left: 0.7rem;
+  margin-top:-0.7rem;
+  font-weight:100;
+  
 }
 
 
-
-.euro {
+.price{
   display: flex;
-  justify-content: flex-end;
-  position: relative;
-  top: -1.3rem;
-  left:3.5rem;
-  font-size: 20px;
-  color: $black;
-  transition: left 0s;
+ justify-content: flex-end;
+ font-size:17px;
+ margin-top:-1rem;
+ padding-right:1rem;
+ transition: transform 0.5s ease, opacity 0.5s ease;
+ font-weight:550;
+ font-family: 'arial',sans-serif;
+  
 }
 
-.euro:hover {
-  left:-1rem;
+.startermenu:hover .price {
+  transform: translateX(5px);
+  opacity:1;
 }
-
-
-.menu-toggle {
-  display:none;
-}
-
 
 
 .check-icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  opacity:0;
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   width: 25px;
   height: 20px;
+  position: absolute;
+  right: 1rem;
+  top:35%;
+  transform: translateY(-50%) translateX(20px);
 }
 
 .startermenu:hover .check-icon {
   opacity: 1;
+  transform: translateX(0px);
 }
 
-.plat,
-.dessert-category {
-  color: #000000;
-  font-family: 'Arial', sans-serif;
-  margin-left: 1rem;
-  border-bottom: 0.3rem solid #99E2D0;
-  height: 1.5rem;
-  width: 11%;
-  padding-top: 1.7rem;
+.name-plate,
+.description-plate {
+  max-width: none;
+  overflow: visible;
+  white-space: normal;
 }
 
-
-.btnbtn {
-  margin-left: 6rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  padding: 1.3rem;
-  border: none;
-  color: $color;
-  background: $bg-gradient;
-  border-radius: 2rem;
-  padding-inline: 3rem;
-  font-size: 20px;
-  box-shadow: $box-shadow;
-}
-.btnbtn:hover{
-  transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0.7;
+.startermenu:hover .name-plate,
+.startermenu:hover .description-plate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width:250px; 
   
 }
 
 
+
+.selectbutton{
+   display: flex;
+   justify-content: center;
+   padding:2rem;
+}
+
+.btnbtn{
+  font-size:16px;
+  height:50px;
+  border: none;
+  color: $color;
+  background: $bg-gradient;
+  border-radius: 25px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease,;
+  padding-inline: 3rem;
+}
+
+.btnbtn:active{
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.7;
+  }
+
+  body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 
 @media (min-width: 768px) {
   .palate-title {
@@ -206,7 +212,6 @@ input[type="checkbox"] {
     padding-bottom: 1rem;
 
   }
-
   .heart-icon {
     width: 5%;
     float: right;
@@ -221,36 +226,56 @@ input[type="checkbox"] {
     width: 6%;
   }
 
+  .startermenu:hover .name-plate,
+.startermenu:hover .description-plate {
+  max-width: none;
+  overflow: visible;
+  white-space: normal;
+  
+}
+
+  .startermenu:hover .price {
+    transform: translateX(-8rem);
+    opacity:1;
+  }
+  
+  .price{
+    display: flex;
+   justify-content: flex-end;
+   font-size:17px;
+   margin-top:-1rem;
+   padding-right:1rem;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+   font-weight:550;
+   font-family: 'arial',sans-serif;
+    
+  }
+  
   .check-icon {
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    width: 30px;
-    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    right:3rem;
+    top:39%;
+    transform: translateY(-50%) translateX(20px);
   }
-
-  .startermenu:hover .check-icon {
-    opacity: 1;
-  }
-
-  .euro {
-    position: relative;
-    left:3rem;
-  }
-
-  .euro:hover {
-    left: -3rem;
-  }
-
-  .btnbtn {
-    margin-left: 17rem;
-  }
+  
+  
 }
 
 @media (min-width: 1024px) {
+
+   
+
+  .startermenu{
+    width:634px;
+    display: block;
+    margin: 0 auto;
+  }
+
+
   .palate-img {
     width: 100%;
     margin-top: -1.5rem;
@@ -258,85 +283,81 @@ input[type="checkbox"] {
     object-fit: cover;
   }
 
-  .heart-icon {
-    width: 5%;
-    position: relative;
-    left: -20rem;
-  }
-
-  .palate-title {
-    font-size: 2rem;
-    text-align: center;
-    text-indent: 0.7rem;
-    padding-bottom: 1rem;
-
-  }
-
   .palate-section {
     position: relative;
     top: -2rem;
-    margin-bottom: -2rem;
     margin-right: 5rem;
     margin-left: 5rem;
   }
 
-
-  .startermenu:hover {
-    background: linear-gradient(to right, white 90%, #99E2D0 10%);
-
-  }
-
-  .check-icon {
-    position: absolute;
-    top: 50%;
-    right: 35px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    width: 30px;
-    height: 30px;
-  }
-
-
-  .euro {
+  .palate-title{
     display: flex;
-    justify-content: flex-end;
-    position: relative;
-    top: -1.3rem;
-    left:3rem;
-    font-size: 20px;
-    color: $black;
-    transition: left 0.5s ease;
-  
-  }
-  
-  .euro:hover {
-    left: -2.5rem;
-  }
-  
-
-  .title-myfood {
-    margin-top: 1rem;
-    padding-bottom: 1rem;
-
+    justify-content: center;
   }
 
-  .back-btn {
-    position: relative;
-    top: -1.5rem;
+  .heart-icon{
+   margin-right:30%;
   }
+
+
+.name-plate{
+  font-size:17px;
+}
+
+
+.description-plate{
+  font-size:13px;
+}
 
   .enter,
   .plat,
   .dessert-category {
-    margin-left: 1.5rem;
-    width: 4%;
-
+   display: block;
+   margin-left:22%;
+    width:4%;
   }
 
+  .description-plate {
+    font-family:'roboto',sans-serif;
+    font-size:15px;
+    padding-left: 0.7rem;
+    margin-top:-0.5rem;
+    font-weight:100;
+    
+  }
+  
+  
+  
+  
+  .price{
+    display: flex;
+   justify-content: flex-end;
+   font-size:17px;
+   margin-top:-1rem;
+   padding-right:1rem;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+   font-weight:550;
+   font-family: 'arial',sans-serif;
+    
+  }
 
-  .btnbtn {
-    margin-left: 27rem;
+  
+  
+  .startermenu:hover .price {
+    transform: translateX(-105px);
+    opacity:1;
+  }
+  
+  
+  .check-icon {
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    right:2rem;
+    top:35%;
+    transform: translateY(-50%) translateX(20px);
   }
 
 }

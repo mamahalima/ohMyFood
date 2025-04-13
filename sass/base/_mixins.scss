@@ -1,31 +1,20 @@
 @mixin btn-styles($color,$bg-gradient) {
-    margin-left: 3.6rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding: 1.3rem;
     border: none;
     color: $color;
     background: $bg-gradient;
     border-radius: 2rem;
-    padding-inline: 1.5rem;
+    padding:1rem;
     font-size: 20px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease,;
+
 }
 
 
-  @mixin choice-styles($bg-color, $box-shadow ){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $bg-color;
-    margin-top: 0.5rem;
-    border-radius: 1.5rem;
-    margin: 2rem;
-    padding: 0.5rem;
-    box-shadow: $box-shadow;
-  }
+  
 
+
+  
   
 
  

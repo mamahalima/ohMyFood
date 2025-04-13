@@ -1,7 +1,41 @@
-h1 {
+body {
   width: 100%;
-  text-align: center;
   margin: 0;
-  font-family: Georgia, serif;
-  margin-top: 2rem;
+  padding: 0;
+}
+
+.title-myfood {
+  text-align: center;
+}
+
+.back-btn {
+  height: 16px;
+  margin-top: -3rem;
+}
+
+.heart-icon {
+  width: 20%;
+  float: right;
+  margin-top: -3rem;
+  margin-right: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.heart-icon:hover path {
+  fill: url(#gradient-icon);
+  stroke: none;
+}
+
+#heart-toggle-icon:checked + label .heart-icon path {
+  fill: url(#gradient-icon);
+  stroke: none;
+}
+
+#heart-toggle-icon:not(:checked) + label .heart-icon path {
+  fill: none;
+  stroke: currentColor;
 }

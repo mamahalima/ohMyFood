@@ -1,0 +1,22 @@
+.reservation {
+  background-color: #F6F6F6;
+}
+
+.map {
+  text-align: center;
+}
+
+.input {
+  background-color: #EAEAEA;
+  border: none;
+  font-size: small;
+  text-align: center;
+  background-color: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
