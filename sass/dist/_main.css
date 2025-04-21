@@ -707,7 +707,7 @@ input[type=checkbox] {
   width: 25px;
   height: 20px;
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   top: 35%;
   transform: translateY(-50%) translateX(20px);
 }
@@ -796,7 +796,7 @@ body {
   }
 
   .startermenu:hover .price {
-    transform: translateX(-8rem);
+    transform: translateX(-155px);
     opacity: 1;
   }
 
@@ -811,14 +811,21 @@ body {
     font-family: "arial", sans-serif;
   }
 
+  .startermenu {
+    background-color: white;
+    height: 72px;
+    border-radius: 1rem;
+    position: relative;
+  }
+
   .check-icon {
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
     width: 25px;
     height: 20px;
     position: absolute;
-    right: 3rem;
-    top: 39%;
+    right: 2rem;
+    top: 35%;
     transform: translateY(-50%) translateX(20px);
   }
 }
