@@ -618,10 +618,11 @@ body {
   margin-bottom: -2rem;
 }
 
-.heart-icon {
-  float: right;
+.heart-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3.5rem;
   padding-right: 1.5rem;
-  margin-top: -3rem;
 }
 
 input[type=checkbox] {
@@ -643,78 +644,95 @@ input[type=checkbox] {
   stroke: currentColor;
 }
 
-.enter, .plat, .dessert-category {
-  color: #000000;
-  font-family: "Arial", sans-serif;
-  margin-left: 1rem;
-  border-bottom: 0.3rem solid #99E2D0;
-  height: 1.5rem;
-  width: 11%;
-}
-
 .container-menu {
   padding-left: 10px;
   padding-right: 10px;
   gap: 1rem;
 }
 
-.startermenu {
+.enter, .plat, .dessert-category {
+  font-size: 16px;
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  border-bottom: 0.3rem solid #99E2D0;
+  height: 1.5rem;
+  width: 7%;
+  font-weight: 300;
+  padding-top: 1rem;
+}
+
+.container-food {
   background-color: white;
-  height: 72px;
   border-radius: 1rem;
+  padding: 13px;
+  display: flex;
+  flex-flow: column;
+  row-gap: 3px;
+  margin-bottom: 1rem;
   position: relative;
 }
 
-.startermenu:hover {
+.container-food:hover {
   background: linear-gradient(to right, white 85%, #99E2D0 15%);
 }
 
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.text-left {
+  flex: 1;
+  min-width: 0;
+}
+
 .name-plate {
+  font-size: 19px;
   font-family: "roboto", sans-serif;
-  font-size: 20px;
-  padding-top: 0.5rem;
-  font-weight: 550;
-  padding-left: 0.7rem;
+  margin: 0;
 }
 
 .description-plate {
-  font-family: "roboto", sans-serif;
+  max-width: 100%;
   font-size: 15px;
-  padding-left: 0.7rem;
-  margin-top: -0.7rem;
+  font-family: "roboto", sans-serif;
   font-weight: 100;
+  margin: 0;
+}
+
+.price-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .price {
-  display: flex;
-  justify-content: flex-end;
   font-size: 17px;
-  margin-top: -1rem;
-  padding-right: 1rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  font-weight: 550;
+  font-weight: 500;
   font-family: "arial", sans-serif;
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.startermenu:hover .price {
-  transform: translateX(5px);
+.container-food:hover .price {
   opacity: 1;
+  transform: translateX(-100px);
 }
 
 .check-icon {
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
   width: 25px;
   height: 20px;
-  position: absolute;
-  right: 2rem;
-  top: 35%;
-  transform: translateY(-50%) translateX(20px);
+  transition: opacity 0.3s ease;
+  transform: translateY(-50%);
 }
 
-.startermenu:hover .check-icon {
+.container-food:hover .check-icon {
   opacity: 1;
-  transform: translateX(0px);
 }
 
 .name-plate,
@@ -724,12 +742,12 @@ input[type=checkbox] {
   white-space: normal;
 }
 
-.startermenu:hover .name-plate,
-.startermenu:hover .description-plate {
+.container-food:hover .name-plate,
+.container-food:hover .description-plate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 250px;
+  max-width: 230px;
 }
 
 .selectbutton {
@@ -771,31 +789,31 @@ body {
   .palate-title {
     font-size: 2rem;
     text-align: left;
-    text-indent: 0.8rem;
+    text-indent: 0.3rem;
     padding-bottom: 1rem;
   }
 
-  .heart-icon {
-    width: 5%;
-    float: right;
-    margin-top: -3rem;
-    margin-right: 1.5rem;
+  .heart-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -4.5rem;
+    padding-right: 1.5rem;
   }
 
   .enter,
 .plat,
 .dessert-category {
-    width: 6%;
+    width: 4%;
   }
 
-  .startermenu:hover .name-plate,
-.startermenu:hover .description-plate {
+  .container-food:hover .name-plate,
+.container-food:hover .description-plate {
     max-width: none;
     overflow: visible;
     white-space: normal;
   }
 
-  .startermenu:hover .price {
+  .container-food:hover .price {
     transform: translateX(-155px);
     opacity: 1;
   }
@@ -804,29 +822,35 @@ body {
     display: flex;
     justify-content: flex-end;
     font-size: 17px;
-    margin-top: -1rem;
     padding-right: 1rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
     font-weight: 550;
     font-family: "arial", sans-serif;
   }
 
-  .startermenu {
+  .container-food {
     background-color: white;
-    height: 72px;
     border-radius: 1rem;
     position: relative;
+    display: flex;
+    flex-flow: column;
+    row-gap: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
   }
 
   .check-icon {
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
     width: 25px;
     height: 20px;
-    position: absolute;
-    right: 2rem;
-    top: 35%;
-    transform: translateY(-50%) translateX(20px);
+    transform: translateY(-50%);
+  }
+
+  .container-food:hover .check-icon {
+    opacity: 1;
   }
 }
 @media (min-width: 1024px) {
@@ -855,8 +879,11 @@ body {
     justify-content: center;
   }
 
-  .heart-icon {
-    margin-right: 30%;
+  .heart-container {
+    display: flex;
+    margin-top: -4.5rem;
+    position: absolute;
+    right: 27%;
   }
 
   .name-plate {
@@ -867,19 +894,26 @@ body {
     font-size: 13px;
   }
 
+  .container-food {
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    row-gap: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
   .enter,
 .plat,
 .dessert-category {
-    display: block;
-    margin-left: 22%;
-    width: 4%;
+    width: 7%;
   }
 
   .description-plate {
     font-family: "roboto", sans-serif;
     font-size: 15px;
-    padding-left: 0.7rem;
-    margin-top: -0.5rem;
     font-weight: 100;
   }
 
@@ -887,26 +921,28 @@ body {
     display: flex;
     justify-content: flex-end;
     font-size: 17px;
-    margin-top: -1rem;
     padding-right: 1rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
     font-weight: 550;
     font-family: "arial", sans-serif;
   }
 
-  .startermenu:hover .price {
+  .container-food:hover .price {
     transform: translateX(-105px);
     opacity: 1;
   }
 
   .check-icon {
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    right: 2.3rem;
+    top: 50%;
     width: 25px;
     height: 20px;
-    position: absolute;
-    right: 2rem;
-    top: 35%;
-    transform: translateY(-50%) translateX(20px);
+    transform: translateY(-50%);
+  }
+
+  .container-food:hover .check-icon {
+    opacity: 1;
   }
 }
