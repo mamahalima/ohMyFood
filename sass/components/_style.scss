@@ -41,10 +41,8 @@ a {
   @include btn-styles($color, $bg-gradient);
   &:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
+    opacity: 0.9; 
   }
-
-  
 }
 
 .btn:active{
@@ -59,7 +57,7 @@ opacity: 0.7;
   padding-top: 1rem;
   display: flex;
   padding-left:1.5rem;
-
+  
 }
 
 .choice{
@@ -200,26 +198,24 @@ opacity: 0.7;
 }
 
 
-.badge-container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px 12px 0 0;
-  margin-top: -36px;
-  height:29px;
+a{
   position: relative;
-  top:-155px;
 }
 
 .badge {
-  background-color:#99E2D0;
-  color: $green-color;
-  padding: 4px 10px;
-  font-family: $text-font;
-  font-size: 12px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
+  background-color: #99E2D0;
+    color: #008766;
+    padding: 4px 10px;
+    font-family: "roboto", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right:10px;
+    top:10px;
 }
+
 
 
 .heart-one:hover path{
@@ -230,7 +226,9 @@ opacity: 0.7;
 #heart-toggle-one:checked + label .heart-one path{
   fill: url(#gradient-one);
   stroke: none;
+  animation: heart-pop 0.3s ease;
 }
+
 
 
 #heart-toggle-one:not(:checked) + label .heart-one path{
@@ -251,6 +249,7 @@ input[type="checkbox"] {
 #heart-toggle-two:checked + label .heart-two path{
   fill: url(#gradient-one);
   stroke: none;
+  animation: heart-pop 0.3s ease;
 }
 
 
@@ -268,6 +267,7 @@ input[type="checkbox"] {
 #heart-toggle-three:checked + label .heart-three path{
   fill: url(#gradient-one);
   stroke: none;
+  animation: heart-pop 0.3s ease;
 }
 
 
@@ -288,12 +288,28 @@ input[type="checkbox"] {
 #heart-toggle-four:checked + label .heart-four path{
   fill: url(#gradient-one);
   stroke: none;
+  animation: heart-pop 0.3s ease;
 }
 
 
 #heart-toggle-four:not(:checked) + label .heart-four path{
   fill: none;
   stroke: currentColor;
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 
@@ -527,13 +543,7 @@ input[type="checkbox"] {
   }
   
   
-  .badge-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 8px 12px 0 0;
-    margin-top: -36px;
-    height:29px;
-  }
+  
   
   .badge {
     background-color:#99E2D0;
