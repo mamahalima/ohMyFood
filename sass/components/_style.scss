@@ -216,11 +216,8 @@ a{
     top:10px;
 }
 
-
-
-.heart-one:hover path{
-  fill: url(#gradient-one);
-  stroke: none;
+input[type="checkbox"] {
+  display: none;
 }
 
 #heart-toggle-one:checked + label .heart-one path{
@@ -228,7 +225,10 @@ a{
   stroke: none;
   animation: heart-pop 0.3s ease;
 }
-
+.heart-one:hover path{
+  fill: url(#gradient-one);
+  stroke: none;
+}
 
 
 #heart-toggle-one:not(:checked) + label .heart-one path{
@@ -237,9 +237,7 @@ a{
 }
 
 
-input[type="checkbox"] {
-  display: none;
-}
+
 
 .heart-two:hover path{
   fill: url(#gradient-one);

@@ -225,9 +225,8 @@ a {
   top: 10px;
 }
 
-.heart-one:hover path {
-  fill: url(#gradient-one);
-  stroke: none;
+input[type=checkbox] {
+  display: none;
 }
 
 #heart-toggle-one:checked + label .heart-one path {
@@ -236,13 +235,14 @@ a {
   animation: heart-pop 0.3s ease;
 }
 
+.heart-one:hover path {
+  fill: url(#gradient-one);
+  stroke: none;
+}
+
 #heart-toggle-one:not(:checked) + label .heart-one path {
   fill: none;
   stroke: currentColor;
-}
-
-input[type=checkbox] {
-  display: none;
 }
 
 .heart-two:hover path {
@@ -597,7 +597,8 @@ body {
 
 .title-myfood {
   text-align: center;
-  font-family: Georgia, serif;
+  font-family: "Shrikhand", serif;
+  font-size: 28px;
 }
 
 .back-btn {
@@ -613,7 +614,9 @@ body {
   display: flex;
   justify-content: flex-start;
   padding-left: 1rem;
-  font-size: 2rem;
+  font-size: 25px;
+  font-family: "Shrikhand", serif;
+  font-weight: 200;
 }
 
 .palate-section {
@@ -686,6 +689,16 @@ input[type=checkbox] {
   padding-top: 1rem;
 }
 
+@keyframes fadeInDownSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .container-food {
   background-color: white;
   border-radius: 1rem;
@@ -695,6 +708,43 @@ input[type=checkbox] {
   row-gap: 3px;
   margin-bottom: 1rem;
   position: relative;
+  animation: fadeInDownSmooth 0.8s ease-out forwards;
+}
+
+.container-food:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.container-food:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.container-food:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.container-food:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.container-food:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.container-food:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.container-food:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.container-food:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.container-food:nth-child(9) {
+  animation-delay: 1.6s;
 }
 
 .container-food:hover {
@@ -735,7 +785,6 @@ input[type=checkbox] {
   font-size: 17px;
   font-weight: 500;
   font-family: "arial", sans-serif;
-  opacity: 0;
   transform: translateX(0);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -812,7 +861,7 @@ body {
 }
 @media (min-width: 768px) {
   .palate-title {
-    font-size: 2rem;
+    font-size: 25px;
     text-align: left;
     text-indent: 0.3rem;
     padding-bottom: 1rem;
@@ -902,6 +951,7 @@ body {
   .palate-title {
     display: flex;
     justify-content: center;
+    font-size: 25px;
   }
 
   .heart-container {
